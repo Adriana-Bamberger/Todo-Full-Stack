@@ -17,10 +17,10 @@ export function deleteTodo(id: number) {
   return connection('todos').where({ id }).delete()
 }
 
-export async function updateTask(updatedTask: Task) {
-  const { id, task, completed } = updatedTask
-  const newTask = await connection('locations')
+export async function updateTask(updateData: Task) {
+  const { id, task, completed } = updateData
+  const updatedTask = await connection('todos')
     .where({ id })
     .update({ task, completed })
-  return newTask
+  return updatedTask
 }

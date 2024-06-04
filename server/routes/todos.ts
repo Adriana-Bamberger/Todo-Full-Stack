@@ -48,4 +48,24 @@ router.delete('/:id', async (req, res, next) => {
   }
 })
 
+// Updates a task
+router.patch('/:id', async (req, res, next) => {
+  try {
+    const id = Number(req.params.id)
+    const updateData = {
+      id,
+      ...req.body,
+    }
+    const updatedTask = await db.updateTask(updateData)
+
+    if (updatedTask) {
+      res.json(updatedTask)
+    } else {
+      res.sendStatus(404)
+    }
+  } catch (error) {
+    console.error(`database error: ${error}`)
+    next(error)
+  }
+})
 export default router
