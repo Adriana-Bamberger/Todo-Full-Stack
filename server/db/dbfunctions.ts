@@ -12,3 +12,15 @@ export function getTaskById(id: number): Promise<Task> {
 export function createTask(newTask: TaskData) {
   return connection('todos').insert(newTask)
 }
+
+export function deleteTodo(id: number) {
+  return connection('todos').where({ id }).delete()
+}
+
+export async function updateTask(updatedTask: Task) {
+  const { id, task, completed } = updatedTask
+  const newTask = await connection('locations')
+    .where({ id })
+    .update({ task, completed })
+  return newTask
+}
