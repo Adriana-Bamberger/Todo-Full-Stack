@@ -6,7 +6,7 @@ interface Props {
 export default function ToDoList({ todos }: Props) {
   return (
     <>
-      <div>ToDo List</div>
+      <div>To Do List</div>
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>{todo.task}</li>
