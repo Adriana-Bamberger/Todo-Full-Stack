@@ -22,6 +22,3 @@ export async function addTodo(todo: string) {
 export async function updateTodo(updatedTodo: string, id: number) {
   await request.patch(`${rootUrl}${id}`).send(updatedTodo)
 }
-//   await request.post(rootUrl).send({ task: todo })
-//   return Promise.resolve(todo)
-// }
