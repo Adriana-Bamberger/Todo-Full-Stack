@@ -4,29 +4,29 @@
  */
 export async function seed(knex) {
   // Deletes ALL existing entries
-  await knex('table_name').del()
-  await knex('table_name').insert([
-    { id: 1, colName: 'Vaccume Driveway', complete: false },
-    { id: 2, colName: 'Iron clothes inside out', complete: false },
-    { id: 3, colName: 'Write love letter to my toster', complete: false },
-    { id: 4, colName: 'Teach goldfish a new trick', complete: false },
-    { id: 5, colName: 'fold the fittered sheets', complete: false },
+  await knex('todos').del()
+  await knex('todos').insert([
+    { id: 1, task: 'Vaccume Driveway', completed: false },
+    { id: 2, task: 'Iron clothes inside out', completed: false },
+    { id: 3, task: 'Write love letter to my toster', completed: false },
+    { id: 4, task: 'Teach goldfish a new trick', completed: false },
+    { id: 5, task: 'fold the fittered sheets', completed: false },
     {
       id: 6,
-      colName: 'Organize sock drawer by color and smell.',
-      complete: false,
+      task: 'Organize sock drawer by color and smell.',
+      completed: false,
     },
-    { id: 7, colName: 'Dust all furniture with oven mitts', complete: false },
+    { id: 7, task: 'Dust all furniture with oven mitts', completed: false },
     {
       id: 8,
-      colName: 'Organize pantry alphabetically by color',
-      complete: false,
+      task: 'Organize pantry alphabetically by color',
+      completed: false,
     },
-    { id: 9, colName: 'Polish silver with banana', complete: false },
+    { id: 9, task: 'Polish silver with banana', completed: false },
     {
       id: 10,
-      colName: 'Clean windows with Muffy the sock puppet.',
-      complete: false,
+      task: 'Clean windows with Muffy the sock puppet.',
+      completed: false,
     },
   ])
 }
