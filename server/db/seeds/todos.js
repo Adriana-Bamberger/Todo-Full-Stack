@@ -28,5 +28,12 @@ export async function seed(knex) {
       task: 'Clean windows with Muffy the sock puppet.',
       completed: false,
     },
+    { id: 11, task: 'host formal dust bunny inspection', completed: false },
+    {
+      id: 12,
+      task: 'Organize fictional bookks in Dewey Decimal System',
+      completed: false,
+    },
+    { id: 13, task: 'Dust electronics with glitter', completed: false },
   ])
 }
