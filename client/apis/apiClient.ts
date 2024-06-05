@@ -1,37 +1,27 @@
-// import request from 'superagent'
+import request from 'superagent'
+import { Task, TaskData } from '../../models/tasks'
 
-export async function fetchTodos() {
-  const FakeToDo = [
-    {
-      id: 1,
-      task: 'Vaccume Driveway',
-      completed: 0,
-    },
-    {
-      id: 2,
-      task: 'Iron clothes inside out',
-      completed: 0,
-    },
-    {
-      id: 3,
-      task: 'Write love letter to my toster',
-      completed: 0,
-    },
-    {
-      id: 4,
-      task: 'Teach goldfish a new trick',
-      completed: 0,
-    },
-    {
-      id: 5,
-      task: 'fold the fittered sheets',
-      completed: 0,
-    },
-  ]
+const rootUrl = '/api/v1/todos'
 
-  return FakeToDo
+export async function fetchTodos(): Promise<Task[]> {
+  const res = await request.get(rootUrl)
+  return res.body
 }
 
 export async function addTodo(todo: string) {
-  return Promise.resolve(todo)
+  console.log("I'm the api: ", todo)
+
+  const newTask: TaskData = {
+    task: todo,
+    completed: false,
+  }
+
+  await request.post(rootUrl).send(newTask)
 }
+
+export async function updateTodo(updatedTodo: string, id: number) {
+  await request.patch(`${rootUrl}${id}`).send(updatedTodo)
+}
+//   await request.post(rootUrl).send({ task: todo })
+//   return Promise.resolve(todo)
+// }
