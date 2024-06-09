@@ -10,7 +10,7 @@ function App() {
     isError,
     error,
   } = useQuery({
-    queryKey: ['todo'],
+    queryKey: ['todos'],
     queryFn: () => fetchTodos(),
   })
   if (isError) {

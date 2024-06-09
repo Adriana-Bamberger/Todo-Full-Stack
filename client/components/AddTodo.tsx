@@ -19,6 +19,8 @@ function AddTodo() {
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     setForm(event?.target.value)
   }
+
+  //Handle Submit
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
     addTodoMutation.mutate(form)
@@ -36,7 +38,7 @@ function AddTodo() {
           placeholder="What do you need to do?"
           value={form}
         />
-        <button>Sumbmit</button>
+        <button>Submit</button>
       </form>
     </>
   )
