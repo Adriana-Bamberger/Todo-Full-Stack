@@ -28,7 +28,7 @@ function App() {
           <TaskList todos={todos} />
         </header>
         <section className="main"></section>
-        <footer className="footer"></footer>
+    
       </>
     )
   }
