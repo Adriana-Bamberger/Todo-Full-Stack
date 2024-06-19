@@ -32,7 +32,7 @@ function AddTodo() {
         <label htmlFor="task">New Todo: </label>
         <input
           onChange={(e) => handleChange(e)}
-          id="id"
+          id="task"
           name="task"
           className="new-todo"
           placeholder="What do you need to do?"
