@@ -13,19 +13,19 @@ Other: Git, GitHub, Insomnia for API testing
 ## View This Project
 To view or run the finished project, follow these steps:
 
-1) Clone the Repository down onto your local pc
-git clone <repository_url>
+1) Clone the Repository down onto your local pc.
+"git clone <repository_url>"
 
-2) cd into it
-cd todo-full-stack
+2) cd into it.
+"cd todo-full-stack"
 
-4) Install Packages and Start the Server:
-npm i
-npm run dev
+4) Install Packages and Start the Server.
+"npm i"
+"npm run dev"
 
 6) Database Setup: Build the database with migrations and seed data.
-npm run knex migrate:latest
-npm run knex seed:run
+"npm run knex migrate:latest"
+"npm run knex seed:run"
 
 ## Acknowledgements
 This project was completed as part of the curriculum for the Dev Academy Full Stack Web Development Bootcamp.
